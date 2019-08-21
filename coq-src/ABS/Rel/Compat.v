@@ -1,0 +1,23 @@
+Require Export Definitions.
+
+Require Export Compat_sub.
+Require Export Compat_weaken_X.
+Require Export Compat_map_EV.
+Require Export Compat_map_HV.
+Require Export Compat_map.
+Require Export Compat_bind_EV.
+Require Export Compat_bind_HV.
+Require Export Compat_hd_def.
+Require Export Compat_hd_var.
+Require Export Compat_val_up.
+Require Export Compat_val_efun.
+Require Export Compat_val_hfun.
+Require Export Compat_val_fun.
+Require Export Compat_val_var.
+Require Export Compat_val_unit.
+Require Export Compat_tm_val.
+Require Export Compat_tm_let.
+Require Export Compat_tm_app.
+Require Export Compat_tm_eapp.
+Require Export Compat_tm_happ.
+Require Export Compat_tm_down.
