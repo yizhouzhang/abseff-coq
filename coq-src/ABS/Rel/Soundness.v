@@ -212,7 +212,7 @@ Theorem soundness EV HV V L (t₁ t₂ : tm EV HV V L) (Closed_t₁ : Xs_tm t₁
 (Π : LEnv EV HV L) (P : HV → F) (Γ : V → ty EV HV L)
 (T : ty EV HV L) (𝓔 : eff EV HV L) :
 ⊨ 【 Π P Γ ⊢ t₁ ≼ˡᵒᵍ t₂ : T # 𝓔 】 →
-ctx_equiv t₁ t₂ Π P Γ T 𝓔.
+【 Π P Γ ⊢ t₁ ≼ᶜᵗˣ t₂ : T # 𝓔 】.
 Proof.
 intro Ht.
 intros C T0 OK_C Closed_C.

@@ -181,9 +181,15 @@ ty EV HV L → eff EV HV L → ty0 → Type :=
   ok_ctx C P Γ Π T1 E1 T''
 .
 
-Definition ctx_equiv EV HV V L (t₁ t₂ : tm EV HV V L)
+Definition ctx_equiv EV HV V L
 (Π : LEnv EV HV L) (P : HV → F) (Γ : V → ty EV HV L)
-(T : ty EV HV L) (E : eff EV HV L) : Prop :=
+(T : ty EV HV L) (E : eff EV HV L)
+(t₁ t₂ : tm EV HV V L) : Prop :=
 ∀ C T', ok_ctx C P Γ Π T E T' → Xs_ctx C = \{} →
 ∀ ξ₁ (v₁ : val0), step_refl_tran ⟨[], ctx_plug C t₁⟩ ⟨ξ₁, v₁⟩ →
 ∃ ξ₂ (v₂ : val0), step_refl_tran ⟨[], ctx_plug C t₂⟩ ⟨ξ₂, v₂⟩.
+
+Notation "【 Π P Γ ⊢ t₁ '≼ᶜᵗˣ' t₂ : T # 𝓔 】" := (ctx_equiv Π P Γ T 𝓔 t₁ t₂)
+(Π at level 0, P at level 0, Γ at level 0,
+ t₁ at level 0, t₂ at level 0, T at level 0).
+
